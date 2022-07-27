@@ -7,13 +7,13 @@
   box-sizing: border-box;
 }
 body {
-  font-family: sans-serif;
+  font-family: "Trebuchet MS", cursive;
 }
 
 /* Video */
 .video-container {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
   z-index: -3;
   width: 100%;
@@ -31,6 +31,9 @@ video {
 }
 
 header {
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -39,16 +42,18 @@ header {
 
 /* Navigation */
 nav {
+  top: 0;
   height: 100px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(71, 0, 0, 0.8);
 }
 
 .logo {
-  width: 140px;
+  border-radius: 30px;
+  width: 90px;
+  height: 90px;
   margin-left: 20px;
 }
 
@@ -64,9 +69,10 @@ nav {
   width: 100%;
   height: 0vh;
   top: 100px;
-  background: rgba(0, 0, 0.9);
+  background: rgba(71, 0, 0, 0.7);
   text-align: center;
   transition: all 0.5s;
+  transform: translateY(0);
 }
 
 .nav-menu li {
@@ -85,7 +91,7 @@ nav {
 
 .nav-menu li a.active,
 .nav-menu li a:hover {
-  color: rgb(248, 8, 8);
+  text-decoration: underline;
   transition: 0.3s;
 }
 
@@ -109,7 +115,7 @@ nav {
   background: rgba(71, 0, 0, 0.7);
   width: 500px;
   margin-left: 0%;
-  border-radius: 30px;
+  border-top-right-radius: 25px;
 }
 
 .banner-text h1 {
@@ -125,15 +131,20 @@ nav {
 /* Responsive */
 
 @media screen and (min-width: 768px) {
+  header:hover {
+    background-color: rgba(71, 0, 0, 0.7);
+  }
   .logo {
     margin-left: 50px;
   }
   nav {
-    height: 100px;
+    height: 90px;
   }
+
   .bar-btn {
     display: none;
   }
+
   .nav-menu {
     position: relative;
     height: 100px;
@@ -142,6 +153,7 @@ nav {
     transition: none;
     text-align: right;
     margin-right: 50px;
+    transform: translateY(0);
   }
   .nav-menu li {
     display: inline-block;
@@ -149,16 +161,20 @@ nav {
     margin: 0 20px;
     transition: none;
   }
-
   .banner-text {
+    align-items: center;
     width: 500px;
   }
-
   .banner-text h1 {
     font-size: 70px;
     margin-bottom: 30px;
   }
   .banner-text h2 {
     font-size: 20px;
+  }
+  .bannerContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5%;
   }
 }
