@@ -10,25 +10,35 @@
     <script src="https://kit.fontawesome.com/5e470ed7fe.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="video-container">
-      <video src="src/assets/videos/CristoBackground.mp4" muted autoplay loop> </video>
-    </div>
+   
     <header>
-      <nav>
+      <div class="video-container">
+        <video src="src/assets/videos/CristoBackground.mp4" muted autoplay loop> </video>
+      </div>
+      <span class="nav-bar" id="btnMenu">
+        <i class="fa-solid fa-bars"></i>
+      </span>
+      <nav class="main-nav">
         <div>
-         <img src="src/assets/icons/InstituteIcon.png" alt="" class="logo">
-        </div>
-        <input type="checkbox" id="check">
-        <label for="check" class="bar-btn">
-            <i class="fa-solid fa-bars"></i>
-        </label>
-        <ul class="nav-menu">
-          <li><a class="active" href="src/pages/Courses">Cursos</a></li>
-          <li><a href="src/pages/AboutInstitute">Sobre Instituto</a></li>
-          <li><a href="src/pages/Contact/">Contacto</a></li>
+          <img src="src/assets/icons/InstituteIcon.png" alt="" class="logo">
+         </div>
+         <!-- Menu -->
+        <ul class="menu" id="menu">
+          <li class="menu-item"><a href="#" class="menu-link active">Inicio</a></li>
+          <li class="menu-item container-submenu">
+            <a href="#" class="menu-link submenu-btn">Cursos</a>
+            <ul class="submenu">
+              <li class="menu-item"><a href="#" class="menu-link">Fundamentales</a></li>
+              <li class="menu-item"><a href="#" class="menu-link">Elementales</a></li>
+
+            </ul>
+          </li>
+          <li class="menu-item"><a href="#" class="menu-link">Sobre Instituto</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">Contacto</a></li>
+
         </ul>
       </nav>
-     
+      <script src="/scripts.js"></script>
     </header>
     <div class="bannerContainer">
       <div class="banner-text">
