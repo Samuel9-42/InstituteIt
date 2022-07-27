@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Trebuchet MS", cursive;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Video */
@@ -29,32 +29,21 @@ video {
   height: 100%;
   transform: translate(-50%, -50%);
 }
-
-header {
-  height: 100%;
-  padding: 0%;
-  margin: 0%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
+/**/
 
 /* Navigation */
-nav {
-  top: 0;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.menu li a.active,
+.menu li a:hover {
+  text-decoration: underline;
+  transition: 0.3s;
 }
-
 .logo {
+  position: absolute;
+  top: 0;
+  right: 43%;
   border-radius: 30px;
-  width: 90px;
-  height: 90px;
-  margin-left: 20px;
+  width: 100px;
+  height: 100px;
 }
 
 .bar-btn {
@@ -64,52 +53,55 @@ nav {
   cursor: pointer;
 }
 
-.nav-menu {
-  position: fixed;
-  width: 100%;
-  height: 0vh;
-  top: 100px;
-  background: rgba(71, 0, 0, 0.7);
-  text-align: center;
-  transition: all 0.5s;
-  transform: translateY(0);
-}
-
-.nav-menu li {
-  display: none;
-  line-height: 30px;
-  margin: 50px 0;
-  transition: all 0.5s;
-}
-
-.nav-menu li a {
-  color: #fff;
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.nav-menu li a.active,
-.nav-menu li a:hover {
-  text-decoration: underline;
-  transition: 0.3s;
-}
-
-#check {
-  display: none;
-}
-
-#check:checked ~ .nav-menu {
-  height: 100vh;
-}
-
-#check:checked ~ .nav-menu li {
+.nav-bar {
+  background: rgba(71, 1, 1, 0.7);
+  padding: 20px;
   display: block;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;
+  width: 100%;
+  height: 90px;
+}
+
+.menu,
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu {
+  width: 100%;
+  height: 100%;
+  margin-left: -100%;
+  transition: all 0.5s;
+}
+.menu-link {
+  display: block;
+  padding: 20px;
+  color: white;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+.submenu {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.submenu .menu-link {
+  background: rgba(37, 1, 1, 0.3);
+  padding-left: 50px;
+}
+
+.mostrar {
+  margin-left: 0;
+  background: rgba(71, 0, 0, 0.7);
+  height: 100%;
 }
 
 .banner-text {
   padding: 0 50px;
-  margin-top: 180px;
+  margin-top: 15%;
   text-align: center;
   color: white;
   background: rgba(71, 0, 0, 0.7);
@@ -130,48 +122,87 @@ nav {
 
 /* Responsive */
 
-@media screen and (min-width: 768px) {
-  header:hover {
+@media screen and (min-width: 1100px) {
+  header {
+    height: 100%;
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-color: rgba(71, 0, 0, 0.7);
   }
+  nav {
+    top: 0;
+    height: 98px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-radius: 30px;
+    width: 120px;
+    height: 120px;
+  }
+  .nav-bar {
+    display: none;
+  }
+
+  .menu {
+    margin-left: 0;
+    display: flex;
+  }
+
+  .submenu {
+    position: absolute;
+  }
+
+  .container-submenu {
+    position: relative;
+  }
+
+  .submenu {
+    position: absolute;
+    top: 60px;
+    width: 200px;
+    overflow: visible;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .container-submenu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+  }
+
   .logo {
     margin-left: 50px;
-  }
-  nav {
-    height: 90px;
   }
 
   .bar-btn {
     display: none;
   }
 
-  .nav-menu {
-    position: relative;
-    height: 100px;
-    top: 0;
-    background: none;
-    transition: none;
-    text-align: right;
-    margin-right: 50px;
-    transform: translateY(0);
-  }
-  .nav-menu li {
-    display: inline-block;
-    line-height: 100px;
-    margin: 0 20px;
-    transition: none;
-  }
   .banner-text {
     align-items: center;
     width: 500px;
   }
+
   .banner-text h1 {
     font-size: 70px;
     margin-bottom: 30px;
   }
+
   .banner-text h2 {
     font-size: 20px;
   }
+
   .bannerContainer {
     display: flex;
     justify-content: flex-start;
